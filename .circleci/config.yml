@@ -5,6 +5,7 @@ workflows:
     commit:
         jobs:
             - build:
+                context: docker-hub-transpiria
                 filters:
                     branches:
                         only: master
