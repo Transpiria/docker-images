@@ -56,15 +56,17 @@ function fillReplacements(content: string, file: string): string {
 }
 
 async function fillFunctions(content: string): Promise<string> {
-    const scripts = require("./.scripts.ts");
+    if (fs.existsSync(".scripts.ts")) {
+        const scripts = require("./.scripts.ts");
 
-    const replacementSearch = /#{function:(.+)}#/g;
-    let match = replacementSearch.exec(content);
-    while (match) {
-        const replacement = await scripts[match[1]]();
-        content = content.replace(match[0], replacement);
+        const replacementSearch = /#{function:(.+)}#/g;
+        let match = replacementSearch.exec(content);
+        while (match) {
+            const replacement = await scripts[match[1]]();
+            content = content.replace(match[0], replacement);
 
-        match = replacementSearch.exec(content);
+            match = replacementSearch.exec(content);
+        }
     }
 
     return content;
@@ -116,6 +118,8 @@ scri.task("Collect Images")
         }
 
         scri.runTask(buildImagesTask.name);
+    }).onError((error) => {
+        console.error(error);
     });
 
 scri.task("build")
