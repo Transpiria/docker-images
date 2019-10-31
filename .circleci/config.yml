@@ -33,5 +33,5 @@ jobs:
             - run:
                 name: Build & Push Images
                 command: |
-                    docker login --username "$DTR_USERNAME" --password $DTR_PASSWORD
+                    docker login --username "$DTR_USERNAME" --password $DTR_PASSWORD docker.io
                     npx scri

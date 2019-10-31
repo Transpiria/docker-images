@@ -4,7 +4,7 @@ import glob from "glob";
 import path from "path";
 import { ProcessHelper as psh, scri } from "scriptastic";
 
-const server = "";
+const server = "docker.io";
 const organization = "transpiria";
 
 function getFullTag(image: string, tag?: string): string {
