@@ -1,0 +1,7 @@
+RUN mkdir /scripts
+ARG NOCACHE=1
+RUN curl -sSO "https://transpiria.github.io/scripts-common/configure/configure.sh" && \
+    chmod +x configure.sh && \
+    mv configure.sh /scripts/
+
+RUN ln -s "/scripts/configure.sh" "/usr/bin/configure"

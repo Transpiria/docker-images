@@ -1,0 +1,25 @@
+{
+  "name": "docker-images",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "Unlicense",
+  "private": true,
+  "homepage": "https://github.com/Transpiria/docker-images#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Transpiria/docker-images.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Transpiria/docker-images/issues"
+  },
+  "devDependencies": {
+    "@types/ansi-colors": "^3.2.0",
+    "@types/glob": "^7.1.1",
+    "ansi-colors": "^4.1.1",
+    "glob": "^7.1.5",
+    "scriptastic": "^1.0.6",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.4"
+  }
+}
